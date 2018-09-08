@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next mist" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://alvabill.ml"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="byPs2b2x73houtcT" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'JWLLOUHRNH',
+      apiKey: '5611be55bcec117cc31f4714874ebbca',
+      indexName: 'alvabillBlog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "5ea4435c"
+    });
+  daovoice('update');
+  </script>
+
+  <meta name="description" content="总结了一下最新标准下的javaScript数据类型，也算是好好复习总结了一下。">
+<meta name="keywords" content="JavaScript,ECMAScript,EC6+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最全Javascript数据类型解析">
+<meta property="og:url" content="http://alvabill.ml/最全Javascript数据类型解析/index.html">
+<meta property="og:site_name" content="Alvabill">
+<meta property="og:description" content="总结了一下最新标准下的javaScript数据类型，也算是好好复习总结了一下。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-09-07T05:51:53.168Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="最全Javascript数据类型解析">
+<meta name="twitter:description" content="总结了一下最新标准下的javaScript数据类型，也算是好好复习总结了一下。">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alvabill" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://alvabill.ml/最全Javascript数据类型解析/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>最全Javascript数据类型解析 | Alvabill</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alvabill</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">9</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags<span class="badge">11</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories<span class="badge">4</span></a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+    
+      
+    
+    <a href="https://github.com/alvabill" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="90" height="90" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    
+      </a>
+    
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://alvabill.ml/最全Javascript数据类型解析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alvabill">
+      <meta itemprop="description" content="Alvabill个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alvabill">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">最全Javascript数据类型解析
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-03-13 13:55:05" itemprop="dateCreated datePublished" datetime="2018-03-13T13:55:05+08:00">2018-03-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-07 13:51:53" itemprop="dateModified" datetime="2018-09-07T13:51:53+08:00">2018-09-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/最全Javascript数据类型解析/" class="leancloud_visitors" data-flag-title="最全Javascript数据类型解析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+             <span class="post-meta-divider">|</span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">9.2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">15 mins.</span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">总结了一下最新标准下的javaScript数据类型，也算是好好复习总结了一下。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>最新的 ECMAScript 标准定义了 7 种数据类型：</p>
+<ol>
+<li>6种原型数据类型（primitive type）:</li>
+</ol>
+<ul>
+<li>undefined.  变量未定义时的属性。</li>
+<li>null. 一个表明 null 值的特殊关键字。 JavaScript 是大小写敏感的，因此 null 与 Null、NULL或其他变量完全不同。</li>
+<li>Boolean.  布尔值，true 和 false.</li>
+<li>Number.  表示数字，例如： 42 或者 3.14159。</li>
+<li>String.  表示字符串，例如：”Howdy”</li>
+<li>Symbol ( 在 ECMAScript 6 中新添加的类型).。一种数据类型，它的实例是唯一且不可改变的。</li>
+</ul>
+<ol start="2">
+<li>以及 Object 对象。（complex type 复杂类型）</li>
+</ol>
+<h3 id="undefined-类型"><a href="#undefined-类型" class="headerlink" title="undefined 类型"></a>undefined 类型</h3><p>Undefined类型只有一个值<code>undefined</code>，表示”缺少值”，就是此处应该有一个值，但是还没有定义。主要的用法：</p>
+<blockquote>
+<p>（1）变量被声明了，但没有赋值时，就等于undefined。<br>（2)  调用函数时，应该提供的参数没有提供，该参数等于undefined。<br>（3）对象没有赋值的属性，该属性的值为undefined。<br>（4）函数没有返回值时，默认返回undefined。<br>   PS: 值 undefined 并不同于未定义的值。但是，typeof 运算符并不真正区分这两种值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i;</span><br><span class="line"><span class="built_in">console</span>.log(i) ; <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x</span>)</span>&#123;<span class="built_in">console</span>.log(x)&#125;</span><br><span class="line">f();  <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>  o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"><span class="built_in">console</span>.log(o.p);  <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = f();</span><br><span class="line"><span class="built_in">console</span>.log(func);  <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> y); <span class="comment">//"undefined"</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="null-类型"><a href="#null-类型" class="headerlink" title="null 类型"></a>null 类型</h3><p>null类型的默认值是<code>null</code>，从逻辑角度讲，是表示一个空对象指针，表示”没有对象”，即该处不应该有值。主要用法：</p>
+<blockquote>
+<p>（1） 作为函数的参数，表示该函数的参数不是对象。<br>（2） 作为对象原型链的终点。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getPrototypeOf(<span class="built_in">Object</span>.prototype)  <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+<p>区别undefined：</p>
+<blockquote>
+<p>当一个变量声明后，未初始化，则该值为undefined，如果这个值是为了保存对象，则修改其默认初始化的值，改为null。 所以当检测其类型时，会显示类型为object。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>        <span class="comment">// object (历史原因，不是'null')</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">undefined</span>   <span class="comment">// "undefined"</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">undefined</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">null</span>  == <span class="literal">undefined</span> <span class="comment">// true</span></span><br><span class="line"><span class="literal">null</span> === <span class="literal">null</span> <span class="comment">// true</span></span><br><span class="line"><span class="literal">null</span> == <span class="literal">null</span> <span class="comment">// true</span></span><br><span class="line">!<span class="literal">null</span> <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>) <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>) <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="number">1</span> + <span class="literal">null</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">isNaN</span>(<span class="number">1</span> + <span class="literal">undefined</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="Boolean-类型"><a href="#Boolean-类型" class="headerlink" title="Boolean 类型"></a>Boolean 类型</h3><p>布尔类型，该类型有两个值：<code>true</code> <code>false</code>。Bloolean()函数，可以将其他类型的值转换为布尔类型。同时也存在隐式类型转换。</p>
+<blockquote>
+<p>这里区分一下Truthy类型和Falsy类型值。<br>Falsy类型值包括：<code>&quot;&quot;</code>, <code>0</code>, <code>null</code>, <code>undefined</code>, <code>NaN</code>, <code>false</code>。<br>除了Falsy类型值以外的都被称为Truthy类型值，它们会被转换为 <code>true</code>。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Boolean</span>(<span class="literal">null</span>)         <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">'hello'</span>)      <span class="comment">// true </span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">'0'</span>)          <span class="comment">// true </span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="string">' '</span>)          <span class="comment">// true </span></span><br><span class="line"><span class="built_in">Boolean</span>([])           <span class="comment">// true </span></span><br><span class="line"><span class="built_in">Boolean</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h4 id="Number-类型"><a href="#Number-类型" class="headerlink" title="Number 类型"></a>Number 类型</h4><p><em>根据 ECMAScript 标准，JavaScript 中只有一种数字类型：基于 IEEE 754 标准的双精度 64 位二进制格式的值（-(263 -1) 到 263 -1）。<strong>它并没有为整数给出一种特定的类型</strong>。除了能够表示浮点数外，还有一些带符号的值：+Infinity，-Infinity 和 NaN (非数值，Not-a-Number)。</em><br>整数可以用十进制（基数为10）、十六进制（基数为16）、八进制（基数为8）以及二进制（基数为2）的<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Grammar_and_types#%E6%95%B0%E7%BB%84%E5%AD%97%E9%9D%A2%E9%87%8F%28Array_literals%29" target="_blank" rel="noopener">字面值</a>来表示。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>, <span class="number">117</span> and <span class="number">-345</span> (十进制, 基数为<span class="number">10</span>)</span><br><span class="line"><span class="number">015</span>, <span class="number">0001</span> and <span class="number">-0</span>o77 (八进制, 基数为<span class="number">8</span>) </span><br><span class="line"><span class="number">0x1123</span>, <span class="number">0x00111</span> and <span class="number">-0xF1A7</span> (十六进制, 基数为<span class="number">16</span>或<span class="string">"hex"</span>)</span><br><span class="line"><span class="number">0b11</span>, <span class="number">0b0011</span> and <span class="number">-0</span>b11 (二进制, 基数为<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
+<p>浮点数（有趣的一点是，在计算前其存储为字符串）所占据的内存空间是整数的两倍。<br>语法：<code>[(+|-)][digits][.digits][(E|e)[(+|-)]digits]</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">3.14</span>      </span><br><span class="line"><span class="number">-.2345789</span> <span class="comment">// -0.23456789</span></span><br><span class="line"><span class="number">-3.12e+12</span>  <span class="comment">// -3.12*1012</span></span><br><span class="line"><span class="number">.1e-23</span>    <span class="comment">// 0.1*10-23=10-24=1e-24</span></span><br></pre></td></tr></table></figure></p>
+<p>NaN:<br>1、即非数值，是一个特殊的值，这个数值用于表示一个本来要返回数值的操作数，未返回数值的情况。比如任何数值除以0，本是不符合规范的，js里，这样的操作返回<code>NaN</code>（但是实际上，只有0除以0时返回<code>NaN</code>，其他则无穷值）。</p>
+<p>2、<code>NaN</code>有两个不同寻常的特点：任何涉及<code>NaN</code>的操作都会返回<code>NaN</code>，<code>NaN</code>值与任何值都不相等，包括本身。<br>3、<code>isNaN()</code>函数，这个函数可以判断，传递的参数是否“不是数值”这里涉及数值转换的问题，例如<code>“10”</code>这个字符串就可以转换为<code>10</code>，但是<code>“blue”</code>这个字符串则无法转换为数字，所以<code>isNaN(&quot;blue&quot;)==true</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+<span class="number">0</span> === <span class="number">-0</span>  <span class="comment">//true</span></span><br><span class="line"><span class="number">42</span> / +<span class="number">0</span>; <span class="comment">// Infinity</span></span><br><span class="line"><span class="number">42</span> / <span class="number">-0</span>; <span class="comment">// -Infinity</span></span><br><span class="line"><span class="literal">NaN</span> == <span class="literal">NaN</span> <span class="comment">//false</span></span><br></pre></td></tr></table></figure></p>
+<p>+Infinity，-Infinity:<br><em>要检查值是否大于或小于 <code>+/-Infinity</code>，你可以使用常量 <code>Number.MAX_VALUE</code> 和 <code>Number.MIN_VALUE</code>。另外在 ECMAScript 6 中，你也可以通过 <code>Number.isSafeInteger()</code> 方法还有 <code>Number.MAX_SAFE_INTEGER 和 Number.MIN_SAFE_INTEGER</code> 来检查值是否在双精度浮点数的取值范围内。 超出这个范围，JavaScript 中的数字不再安全了，也就是只有 second mathematical interger 可以在 JavaScript 数字类型中正确表现。</em></p>
+<h3 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h3><p>这个算是比较熟悉的了这里引用一下<a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN</a>的描述。<br>JavaScript的字符串类型用于表示文本数据。它是一组16位的无符号整数值的“元素”。在字符串中的每个元素占据了字符串的位置。第一个元素的索引为0，下一个是索引1，依此类推。字符串的长度是它的元素的数量。<br>不同于类 C 语言，JavaScript 字符串是不可更改的。这意味着字符串一旦被创建，就不能被修改。但是，可以基于对原始字符串的操作来创建新的字符串。<br>主要强调一下ES2015的模板字符串：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Basic literal string creation</span></span><br><span class="line"><span class="string">`In JavaScript '\n' is a line-feed.`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Multiline strings</span></span><br><span class="line"><span class="string">`In JavaScript this is</span></span><br><span class="line"><span class="string"> not legal.`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// String interpolation</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">"Bob"</span>, time = <span class="string">"today"</span>;</span><br><span class="line"><span class="string">`Hello <span class="subst">$&#123;name&#125;</span>, how are you <span class="subst">$&#123;time&#125;</span>?`</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Construct an HTTP request prefix is used to interpret the replacements and construction</span></span><br><span class="line">POST<span class="string">`http://foo.org/bar?a=<span class="subst">$&#123;a&#125;</span>&amp;b=<span class="subst">$&#123;b&#125;</span></span></span><br><span class="line"><span class="string">     Content-Type: application/json</span></span><br><span class="line"><span class="string">     X-Credentials: <span class="subst">$&#123;credentials&#125;</span></span></span><br><span class="line"><span class="string">     &#123; "foo": <span class="subst">$&#123;foo&#125;</span>,</span></span><br><span class="line"><span class="string">       "bar": <span class="subst">$&#123;bar&#125;</span>&#125;`</span>(myOnReadyStateChangeHandler);</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><code>String()</code>函数可以将任何类型的值转换为字符串，包括<code>null</code>转换为<code>&#39;null&#39;</code>、<code>undefined</code>转换为<code>&#39;undefined&#39;</code>。</p>
+</blockquote>
+<h3 id="Symbol-类型"><a href="#Symbol-类型" class="headerlink" title="Symbol 类型"></a>Symbol 类型</h3><p>语法：<code>Symbol([description])</code><br>1、每个从Symbol()返回的symbol值都是唯一的。<br>直接使用Symbol()创建新的symbol类型，并用一个字符串（可省略）作为其描述。以下代码创建了三个新的symbol类型。 字符串 “foo” 的作用仅为描述，它每次都会创建一个新的 symbol类型：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sym1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">var</span> sym2 = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">var</span> sym3 = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="built_in">Symbol</span>(<span class="string">"foo"</span>) === <span class="built_in">Symbol</span>(<span class="string">"foo"</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<p>还可以使用<code>Symbol.for</code>方法创建新的symbol类型，和前者区别<code>Symbol.for()</code>会把symbol值以一个key值登记到全局环境中，<code>Symbol()</code>就不会。<code>Symbol.for()</code>不会每次调用就返回一个新的 Symbol 类型的值，而是会先检查给定的key是否已经存在，如果不存在才会新建一个值。比如，如果你调用<code>Symbol.for(&quot;cat&quot;)</code>30 次，每次都会返回同一个 Symbol 值，但是调用<code>Symbol(&quot;cat&quot;)</code>30 次，会返回 30 个不同的 Symbol 值。查看登记的Symbol值可以使用<code>Symbol.keyFor</code>方法，该方法返回一个已登记的 Symbol 类型值的key。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sym1 = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">let</span> sym2 = <span class="built_in">Symbol</span>(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">let</span> sym3 = <span class="built_in">Symbol</span>.for(<span class="string">'foo'</span>);</span><br><span class="line"><span class="keyword">let</span> sym4 = <span class="built_in">Symbol</span>.for(<span class="string">'foo'</span>);</span><br><span class="line">sym1 === sym2  <span class="comment">//false</span></span><br><span class="line">sym3 === sym4  <span class="comment">//true</span></span><br><span class="line"><span class="built_in">Symbol</span>.keyFor(sym1) <span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">Symbol</span>.keyFor(sym3) <span class="comment">//"foo"</span></span><br></pre></td></tr></table></figure></p>
+<p>2、 不再支持new 运算符的语法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sym = <span class="keyword">new</span> <span class="built_in">Symbol</span>(); <span class="comment">// TypeError</span></span><br></pre></td></tr></table></figure></p>
+<p>这会阻止创建一个显式的 Symbol 包装器对象而不是一个 Symbol 值。围绕原始数据类型创建一个显式包装器对象从 ECMAScript 6 开始不再被支持。 然而，现有的原始包装器对象，如 new Boolean、new String以及new Number因为遗留原因仍可被创建。</p>
+<p>3、特殊的类型转换<br>Symbol 值不能与其他类型的值进行运算。<br>Symbol 值可以显式转为字符串、布尔值，但是不能转为数值。</p>
+<p>4、用于对象属性名（主要）<br>Symbol 值作为对象属性名时，不能用点运算符。一般通过方括号结构和<code>Object.defineProperty</code>，将对象的属性名指定为一个 Symbol 值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sym1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">let</span> sym2 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">let</span> sym3 = <span class="built_in">Symbol</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">  [sym1]: <span class="string">'Symbol1'</span>;</span><br><span class="line">&#125;;</span><br><span class="line">a[sym2] = <span class="string">'Symbol2'</span>;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, sym3, &#123; <span class="attr">value</span>: <span class="string">'Symbol3'</span> &#125;);</span><br><span class="line"></span><br><span class="line">a.sym1 = <span class="string">'Hello!'</span>;</span><br><span class="line">a[sym1] <span class="comment">// "Symbol1"</span></span><br><span class="line">a[<span class="string">'sym1'</span>] <span class="comment">// "Hello!"</span></span><br></pre></td></tr></table></figure></p>
+<p>Symbol 作为属性名，该属性不会出现在<code>for...in</code>、<code>for...of</code>循环中，也不会被<code>Object.keys()</code>、<code>Object.getOwnPropertyNames()</code>、<code>JSON.stringify()</code>返回。但是，它也不是私有属性，有一个<code>Object.getOwnPropertySymbols</code>方法，返回一个数组，成员是当前对象的所有用作属性名的 Symbol 值。</p>
+<blockquote>
+<p>更多的Symbol相关内容参考这篇文章——<a href="http://es6.ruanyifeng.com/#docs/symbol" target="_blank" rel="noopener">传送门</a></p>
+</blockquote>
+<h3 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h3><p>在计算机科学中, 对象是指内存中的可以被标识符引用的一块区域。<br>对象属于复杂数据类型，也可以说是引用类型（逻辑上等价于class/类）。相对于原始数据类型的直接存取（栈内存），复杂数据类型的存储方式为引用（堆内存，栈内存保存对应的指针）。</p>
+<h4 id="Object-对象"><a href="#Object-对象" class="headerlink" title="Object 对象"></a>Object 对象</h4><p>ECMAScript 中的所有对象都由这个对象继承而来，Object 对象中的所有属性和方法都会出现在其他对象中，所以理解了 Object 对象，就可以更好地理解其他对象。<br>本文主要介绍以下几点：</p>
+<ul>
+<li>Object()作为函数以及Object()构造函数</li>
+<li>Object静态方法</li>
+<li>Object实例方法</li>
+</ul>
+<p>1、Object()与new Object()<br>Object函数可以把任意值转换为对象；<code>new Object()</code>则是生成新对象，可以简写为<code>{}</code>。除语义上的不同外，两者的用法相同，以下以<code>Object()</code>为例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>();</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>(<span class="literal">undefined</span>);</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>(<span class="literal">null</span>);</span><br><span class="line"><span class="comment">//以上语句等效，返回空对象</span></span><br><span class="line">obj <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>(<span class="number">1</span>);</span><br><span class="line">obj <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// true</span></span><br><span class="line">obj <span class="keyword">instanceof</span> <span class="built_in">Number</span> <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>(<span class="string">'foo'</span>);</span><br><span class="line">obj <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// true</span></span><br><span class="line">obj <span class="keyword">instanceof</span> <span class="built_in">String</span> <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>(<span class="literal">true</span>);</span><br><span class="line">obj <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// true</span></span><br><span class="line">obj <span class="keyword">instanceof</span> <span class="built_in">Boolean</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>如果参数本来就是一个对象便不需要转换，直接返回该对象：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>(arr); <span class="comment">// 返回原数组</span></span><br><span class="line">obj === arr <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> value = &#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>(value) <span class="comment">// 返回原对象</span></span><br><span class="line">obj === value <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> obj = <span class="built_in">Object</span>(fn); <span class="comment">// 返回原函数</span></span><br><span class="line">obj === fn <span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>
+<p>2、Object静态方法<br>所谓“静态方法”，是指部署在Object对象自身的方法。例如：<code>Object.key = value</code>、<code>{key:value}</code>。<br>一般使用<code>Object.keys</code>方法和<code>Object.getOwnPropertyNames</code>方法来遍历对象的属性。区别在于后者可以列举不可枚举的属性名，例如数组的<code>length</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">'Hello'</span>, <span class="string">'World'</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.keys(a) <span class="comment">// ["0", "1"]</span></span><br><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(a) <span class="comment">// ["0", "1", "length"]</span></span><br></pre></td></tr></table></figure></p>
+<p>其他静态方法：(<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener">传送门</a>)<br>1）对象属性模型的相关方法</p>
+<ul>
+<li><code>Object.getOwnPropertyDescriptor()</code>：获取某个属性的描述对象。</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener"><code>Object.defineProperty()</code></a>：通过描述对象，定义某个属性。定义key为Symbol的属性的方法之一。</li>
+<li><code>Object.defineProperties()</code>：通过描述对象，定义多个属性。</li>
+</ul>
+<p>2）控制对象状态的方法</p>
+<ul>
+<li><code>Object.preventExtensions()</code>：防止对象扩展。</li>
+<li><code>Object.isExtensible()</code>：判断对象是否可扩展。</li>
+<li><code>Object.seal()</code>：禁止对象配置。</li>
+<li><code>Object.isSealed()</code>：判断一个对象是否可配置。</li>
+<li><code>Object.freeze()</code>：冻结一个对象。</li>
+<li><code>Object.isFrozen()</code>：判断一个对象是否被冻结。</li>
+</ul>
+<p>3）原型链相关方法</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener"><code>Object.assign(target, ...sources)</code></a>：用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="noopener"><code>Object.create()</code></a>：该方法可以指定原型对象和属性，返回一个新的对象。</li>
+<li><code>Object.getPrototypeOf()</code>：获取对象的<code>Prototype</code>对象。</li>
+</ul>
+<p>3、Object实例方法<br>定义在<code>Object.prototype</code>的·对象称为实例方法，所有Object的实例对象都继承了这些方法。<br><code>Object</code>实例对象的方法，主要有以下六个。</p>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf" target="_blank" rel="noopener"><code>Object.prototype.valueOf()</code></a>：返回当前对象对应的值。</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/toString" target="_blank" rel="noopener"><code>Object.prototype.toString()</code></a>：返回当前对象对应的字符串形式。<strong>检测对象类型。</strong></li>
+<li><code>Object.prototype.toLocaleString()</code>：返回当前对象对应的本地字符串形式。</li>
+<li><code>Object.prototype.hasOwnProperty()</code>：判断某个属性是否为当前对象自身的属性，还是继承自原型对象的属性。</li>
+<li><code>Object.prototype.isPrototypeOf()</code>：判断当前对象是否为另一个对象的原型。</li>
+<li><code>Object.prototype.propertyIsEnumerable()</code>：判断某个属性是否可枚举。</li>
+</ul>
+<h2 id="数据类型判断"><a href="#数据类型判断" class="headerlink" title="数据类型判断"></a>数据类型判断</h2><p>之所以会说到这个判断问题，主要原因是<code>typeof</code>是不太靠谱的。首先JavaScript是动态数据类型的语言，很多类型检查是不必要的。在具体实现上的问题，在实际的项目应用中，<code>typeof</code>也只有两个用途，就是检测一个元素是否为<code>undefined</code>，或者是否为<code>function</code>。由下面的表格可见一斑：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Value               function   typeof</span><br><span class="line">-------------------------------------</span><br><span class="line">&quot;foo&quot;               String     string</span><br><span class="line">new String(&quot;foo&quot;)   String     object</span><br><span class="line">1.2                 Number     number</span><br><span class="line">new Number(1.2)     Number     object</span><br><span class="line">true                Boolean    boolean</span><br><span class="line">new Boolean(true)   Boolean    object</span><br><span class="line">new Date()          Date       object</span><br><span class="line">new Error()         Error      object</span><br><span class="line">[1,2,3]             Array      object</span><br><span class="line">new Array(1, 2, 3)  Array      object</span><br><span class="line">new Function(&quot;&quot;)    Function   function</span><br><span class="line">/abc/g              RegExp     object</span><br><span class="line">new RegExp(&quot;meow&quot;)  RegExp     object</span><br><span class="line">&#123;&#125;                  Object     object</span><br><span class="line">new Object()        Object     object</span><br></pre></td></tr></table></figure></p>
+<p>如果还是要判断的话，公认的靠谱解法是 <code>Object.prototype.toString.call(x) === &#39;[object type]&#39;</code>。具体实现可以参考<code>jQuery.type()</code>源码。另外通过构造函数创建的对象都可以用 <code>instanceof</code> 检查。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/31759933" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31759933</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Data_structures</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol</a></li>
+<li><a href="https://javascript.ruanyifeng.com/stdlib/object.html" target="_blank" rel="noopener">https://javascript.ruanyifeng.com/stdlib/object.html</a></li>
+<li><a href="https://segmentfault.com/q/1010000000464600" target="_blank" rel="noopener">https://segmentfault.com/q/1010000000464600</a></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+      <div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+    
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/最全Javascript数据类型解析/">最全Javascript数据类型解析</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Alvabill 的个人博客">Alvabill</a></p>
+  <p><span>发布时间:</span>2018年03月13日 - 13:03</p>
+  <p><span>最后更新:</span>2018年09月07日 - 13:09</p>
+  <p><span>原始链接:</span><a href="/最全Javascript数据类型解析/" title="最全Javascript数据类型解析">http://alvabill.ml/最全Javascript数据类型解析/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://alvabill.ml/最全Javascript数据类型解析/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+          
+    </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://p3dm71oa7.bkt.clouddn.com/wcpay.png" alt="Alvabill WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://p3dm71oa7.bkt.clouddn.com/zfbpay.jpg" alt="Alvabill Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+          
+            <a href="/tags/ECMAScript/" rel="tag"><i class="fa fa-tag"></i> ECMAScript</a>
+          
+            <a href="/tags/EC6/" rel="tag"><i class="fa fa-tag"></i> EC6+</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/forEach方法跳出循环/" rel="next" title="forEach方法跳出循环">
+                <i class="fa fa-chevron-left"></i> forEach方法跳出循环
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/基于‘从输入URL到页面加载发生了什么’的相关知识体系搭建/" rel="prev" title="基于‘从输入URL到页面加载发生了什么’的相关知识体系搭建">
+                基于‘从输入URL到页面加载发生了什么’的相关知识体系搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  
+    <div style="text-align: center;">
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a7327e2ab18bb74" async = "async" ></script>
+</div>
+
+    </div>
+  
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzc1MC8xMDMwNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Alvabill" />
+            
+              <p class="site-author-name" itemprop="name">Alvabill</p>
+              <p class="site-description motion-element" itemprop="description">Alvabill个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Alvabill" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.freecodecamp.cn/alvabill" target="_blank" title="fcc" rel="external nofollow"><i class="fa fa-fw fa-free-code-camp"></i>fcc</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.jianshu.com/u/439a6eee60e1" target="_blank" title="简书" rel="external nofollow"><i class="fa fa-fw fa-book"></i>简书</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.csdn.net/weixin_38796712" target="_blank" title="CSDN" rel="external nofollow"><i class="fa fa-fw fa-rotate-right"></i>CSDN</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://juejin.im/user/5a745af5f265da4e8b2fb184" target="_blank" title="掘金" rel="external nofollow"><i class="fa fa-fw fa-angle-double-down"></i>掘金</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://segmentfault.com/u/alvabill" target="_blank" title="segmentfault" rel="external nofollow"><i class="fa fa-fw fa-gripfire"></i>segmentfault</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.chuangzaoshi.com/code" title="创造狮导航" target="_blank">创造狮导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://e.xitu.io/" title="掘金酱" target="_blank">掘金酱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="V2EX" target="_blank">V2EX</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="印记中文" target="_blank">印记中文</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined-类型"><span class="nav-number">1.1.</span> <span class="nav-text">undefined 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null-类型"><span class="nav-number">1.2.</span> <span class="nav-text">null 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean-类型"><span class="nav-number">1.3.</span> <span class="nav-text">Boolean 类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Number-类型"><span class="nav-number">1.3.1.</span> <span class="nav-text">Number 类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-类型"><span class="nav-number">1.4.</span> <span class="nav-text">String 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Symbol-类型"><span class="nav-number">1.5.</span> <span class="nav-text">Symbol 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象"><span class="nav-number">1.6.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Object-对象"><span class="nav-number">1.6.1.</span> <span class="nav-text">Object 对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型判断"><span class="nav-number">2.</span> <span class="nav-text">数据类型判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alvabill</span>
+
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Symbols count total: </span>
+    
+    <span title="Symbols count total">74k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    
+    <span title="Reading time total">2:04</span>
+  
+  </div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+    <script type="text/javascript">
+      window.livereOptions = {
+        refer: '最全Javascript数据类型解析/'
+      };
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.4.1"></script>
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "nkmgHuL14TznEIPB93o7Hgg3-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "nkmgHuL14TznEIPB93o7Hgg3-gzGzoHsz",
+                'X-LC-Key': "fU3Xj9kGA23cwCvim1iQQIpe",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 9384,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.4.1"></script>
+
+
+  
+
+  
+  
+  
+    
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@latest/bookmark.min.js"></script>
+  <script type="text/javascript">
+  
+    bookmark.scrollToMark('auto', "#more");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('Copied')
+          else $(this).text('Copy failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"width":80,"position":"left","vOffset":-150},"mobile":{"show":false}});</script></body>
+</html>

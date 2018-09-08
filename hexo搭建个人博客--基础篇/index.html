@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next mist" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("https://alvabill.ml"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="byPs2b2x73houtcT" />
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"right","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: true,
+    lazyload: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: 'JWLLOUHRNH',
+      apiKey: '5611be55bcec117cc31f4714874ebbca',
+      indexName: 'alvabillBlog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "5ea4435c"
+    });
+  daovoice('update');
+  </script>
+
+  <meta name="description" content="本文为基于hexo搭建个人博客同时用上自己的域名来进行访问的一个全面性的教程，区别于网上其他较为分散的教程，本教程使用的都是最新可用的方法，避免了那些历史遗留的bug，同时通过博主的亲身经历来为大家绕过可能会踩到的坑，算是较为完整全面地实现一个小白友好的项目。">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo搭建个人博客--基础篇">
+<meta property="og:url" content="http://alvabill.ml/hexo搭建个人博客--基础篇/index.html">
+<meta property="og:site_name" content="Alvabill">
+<meta property="og:description" content="本文为基于hexo搭建个人博客同时用上自己的域名来进行访问的一个全面性的教程，区别于网上其他较为分散的教程，本教程使用的都是最新可用的方法，避免了那些历史遗留的bug，同时通过博主的亲身经历来为大家绕过可能会踩到的坑，算是较为完整全面地实现一个小白友好的项目。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517474896002.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517476774171.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517477579071.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517477681510.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517480208966.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517480336865.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517480543241.jpg">
+<meta property="og:image" content="https://dn-coding-net-production-pp.qbox.me/799fcc2d-88ec-43fb-b122-044d8b33eafb.png">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517481884400.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517481952168.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508131471.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508261452.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508321452.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508368555.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508442720.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508616330.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508874508.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508962220.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509290333.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509340935.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509419598.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509507009.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509649013.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509876570.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517510074853.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517510582432.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517510817702.jpg">
+<meta property="og:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517511580763.jpg">
+<meta property="og:updated_time" content="2018-09-07T05:51:52.931Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo搭建个人博客--基础篇">
+<meta name="twitter:description" content="本文为基于hexo搭建个人博客同时用上自己的域名来进行访问的一个全面性的教程，区别于网上其他较为分散的教程，本教程使用的都是最新可用的方法，避免了那些历史遗留的bug，同时通过博主的亲身经历来为大家绕过可能会踩到的坑，算是较为完整全面地实现一个小白友好的项目。">
+<meta name="twitter:image" content="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517474896002.jpg">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Alvabill" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://alvabill.ml/hexo搭建个人博客--基础篇/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>hexo搭建个人博客--基础篇 | Alvabill</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alvabill</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Stay Hungry, Stay Foolish</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives<span class="badge">9</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags<span class="badge">11</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories<span class="badge">4</span></a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+    
+      
+    
+    <a href="https://github.com/alvabill" class="github-corner" target="_blank" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="90" height="90" viewBox="0 0 250 250" style="fill:#222; color:#fff; position: absolute; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style></a>
+    
+      </a>
+    
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://alvabill.ml/hexo搭建个人博客--基础篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alvabill">
+      <meta itemprop="description" content="Alvabill个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alvabill">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">hexo搭建个人博客--基础篇
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-01-30 19:46:00" itemprop="dateCreated datePublished" datetime="2018-01-30T19:46:00+08:00">2018-01-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-07 13:51:52" itemprop="dateModified" datetime="2018-09-07T13:51:52+08:00">2018-09-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/建站/" itemprop="url" rel="index"><span itemprop="name">建站</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/hexo搭建个人博客--基础篇/" class="leancloud_visitors" data-flag-title="hexo搭建个人博客--基础篇">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+             <span class="post-meta-divider">|</span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">5.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">9 mins.</span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">本文为基于hexo搭建个人博客同时用上自己的域名来进行访问的一个全面性的教程，区别于网上其他较为分散的教程，本教程使用的都是最新可用的方法，避免了那些历史遗留的bug，同时通过博主的亲身经历来为大家绕过可能会踩到的坑，算是较为完整全面地实现一个小白友好的项目。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>基于hexo搭建个人blog的文章在网上已经有很多了，不过由于时间的原因有很多已经不再适用或者说留下了很多坑，本文是基于个人这些天搭建的经历，踩了无数坑把这些坑给填上后总结出的目前最简易也是最靠谱的方法，相信小白看着也能直接搭建一个漂亮美观可随时访问的个人博客，嘿嘿，先晒一晒自己的成果，个人还是比较满意的–<a href="http://alvabill.ml/">我的blog</a>。</p>
+<h2 id="hexo介绍"><a href="#hexo介绍" class="headerlink" title="hexo介绍"></a>hexo介绍</h2><p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517474896002.jpg" alt=""><br>官网上的描述是<a href="https://hexo.io/docs/" target="_blank" rel="noopener">Hexo</a>是一个快速，简单而强大的博客框架。您可以使用Markdown（或其他语言）编写文章，Hexo可以在几秒钟内生成具有美丽主题的静态文件。</p>
+<p>简单来说它就是一个主打简单快速的博客框架，这个可以对比下知名度更高一些的WordPress，相对来说后者更强，不过更适合有服务器的人使用，比如你去购买个阿里云什么的建站那种，不过我们这次追求简洁，不想在服务器折腾，后文会介绍具体在哪里架设我们的博客，而且hexo可以魔改…给爱折腾的人用也很不错，另外hexo基于现在大热的nodeJS，可以配合学习一下，这也是我选择它的出发点之一。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>声明一下，本教程主要针对windows用户，其他平台用户在某些操作上可能有些不一致，可以在评论区或者右下角留言交流。</p>
+<p>如有需要本教程会持续更新。</p>
+<h3 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h3><p>下载并安装<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>（安装就是一直next就可以）</p>
+<p>git主要用于版本控制，另外这里hexo的操作很多都需要在git bash进行，不然会出现奇怪错误，想要了解更多git知识可以参考以下链接：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程–廖雪峰网站</a>。当然，直接跟着本教程走也是完全没问题的。</p>
+<h3 id="NodeJS安装"><a href="#NodeJS安装" class="headerlink" title="NodeJS安装"></a>NodeJS安装</h3><p>关于NodeJS的一些介绍可以稍微看一下这篇文章–<a href="https://www.cnblogs.com/fang-beny/p/4778591.html" target="_blank" rel="noopener">NodeJS简介</a>，在本教程中NodeJS主要用于管理下载第三方包，例如hexo，而这些工作都是npm在负责的。<br>1.下载并安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">NodeJS</a><br>这里选择最新的稳定版本v8.9.4安装过程可以一路next，不过推荐在选择安装路径时选择D盘，然后记住路径名，一般情况下是<code>D:\Program Files\nodejs\</code><br>安装后输入<code>Win+R</code>输入<code>cmd</code>打开控制台输入以下代码：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>如果返回版本号即安装完成，否则就需要配置环境变量（参考步骤2中的图片）再测试</p>
+<p>2.NodeJS配置<br>配置npm<br>我们要先配置npm的全局模块的存放路径以及cache的路径，最好在nodejs安装路径下建立”node_global”及”node_cache”两个文件夹。如下图：</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517476774171.jpg" alt=""><br>启动cmd，输入</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> prefix "D:\Program Files\nodejs\node_global"</span><br><span class="line">npm config <span class="built_in">set</span> cache "D:\Program Files\nodejs\node_cache"</span><br></pre></td></tr></table></figure>
+<p>配置环境变量（win10可以通过小娜查询“环境变量”找到入口），如下图打开</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517477579071.jpg" alt=""><br>框中的三条记录是必须的（路径改为你们自己的路径）</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517477681510.jpg" alt=""><br>测试是否配置完成，可以安装express来进行测试，打开cmd，输入</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure>
+<p>完成后在<code>node_global</code>目录下查看是否存在express目录即可。</p>
+<h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><p>打开git bash，为了避免出现错误后面的操作在git bash进行<br>首先新建一个存放hexo文件的目录，例如在D盘根目录新建<code>hexo</code>文件夹，然后cd到该目录下，开始安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> D:hexo/ 	<span class="comment">#换成你的目录</span></span><br><span class="line">$ npm install -g hexo-cli  <span class="comment">#安装hexo脚手架</span></span><br><span class="line">$ hexo init  	<span class="comment">#Hexo自动在当前文件夹下下载搭建网站所需的所有文件</span></span><br><span class="line">$ npm install  	<span class="comment">#安装依赖包</span></span><br><span class="line"></span><br><span class="line">$ hexo g 		<span class="comment">#完整命令为hexo generate，生成静态文件</span></span><br><span class="line">$ hexo s 		<span class="comment">#完整命令为hexo server，启动服务器，用来本地预览</span></span><br></pre></td></tr></table></figure>
+<p>用浏览器访问<code>http://localhost:4000/</code>，这时就可以看到了一个比较漂亮的博客了，这个是hexo的默认主题landscape，而我们会使用的是NexT主题，这个在后面会说到如何配置。</p>
+<h3 id="Github-Coding"><a href="#Github-Coding" class="headerlink" title="Github/Coding"></a>Github/Coding</h3><p>本地博客搭建好了接下来是要把它部署到网上，这里可以选择<a href="https://github.com/" target="_blank" rel="noopener">github</a>和国内的<a href="https://coding.net/" target="_blank" rel="noopener">coding</a>平台，后者在打开自己网站时会跳出广告，前者访问速度比较慢，大家自行选择，然后我现在的话是两个同时在使用。<br>注册部分我就不说了，如果两个都注册的话建议名字取相同的。下面详细说一下github和coding的Pages服务如何创建<br>1.Github Page<br>打开github主页，新建仓库（repository），这里要注意仓库的名称，比如我的帐号是<code>alvabill</code>，那么仓库名称应该是：<code>alvabill.github.io</code>。</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517480208966.jpg" alt=""></p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517480336865.jpg" alt="这里警告是因为我已经创建过该仓库"></p>
+<p>2.Coding Page<br>Coding的操作和github相差无几</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517480543241.jpg" alt=""></p>
+<p>新建一个名为<code>{user_name}.coding.me</code> 的项目。<code>{user_name}</code> 指您本人的用户名，例如我的用户名为<code>alvabill</code></p>
+<p><img src="https://dn-coding-net-production-pp.qbox.me/799fcc2d-88ec-43fb-b122-044d8b33eafb.png" alt="自己的报错，用一下别家的图了"></p>
+<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>以上过程完成后就是把hexo生成的静态页面上传了，以为要结束了吗，还没呢，这里还需要配置SSH，首先要本地生成公钥私钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"你的邮件地址"</span></span><br></pre></td></tr></table></figure>
+<p>引号里面的内容输入你的邮箱地址，然后回车，会提示你文件保存的路径，这时候按回车键确认，然后会提示你输入密码，输入即可（输入密码是看不到的），然后会确认输入一次，就可以在刚刚的路径看到生成了两个文件，一个是<code>id_rsa</code>，另一个是<code>id_rsa.pub</code>，用<a href="http://www.sublimetext.com/" target="_blank" rel="noopener">sublime</a>打开<code>id_rsa.pub</code>然后选中里面的全部内容，复制下来。<br>打开GitHub或Coding的SSH页面<br>Github：setting–&gt;SSH and GPG keys–&gt;New SSH key</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517481884400.jpg" alt=""><br>Coding：</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517481952168.jpg" alt=""></p>
+<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>打开<code>D:\hexo</code>，用sublime打开<code>_config.yml</code>文件，文件最后可以看到</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span></span><br></pre></td></tr></table></figure>
+<p>修改（注意要换上自己的链接）</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span> <span class="string">git@github.com:yourname/yourname.github.io.git</span>   <span class="comment">#发布到github</span></span><br><span class="line">  <span class="comment">#repository: git@git.coding.net:yourname/yourname.git            #发布到Coding</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>或者同时发布到两个平台：<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repository:</span></span><br><span class="line"><span class="attr">    github:</span> <span class="string">git@github.com:yourname/yourname.github.io.git,master</span></span><br><span class="line"><span class="attr">    coding:</span> <span class="string">git@git.coding.net:yourname/yourname.git,master</span></span><br></pre></td></tr></table></figure></p>
+<p><code>ctrl+s</code>保存修改。<br>打开git bash在当前目录输入以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d 		<span class="comment">#完整命令为hexo deploy，将本地文件发布到page服务平台上</span></span><br></pre></td></tr></table></figure>
+<p>如遇遇到异常可以<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<p>如果出现以下异常</p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ERROR </span>Deployer not found: git</span><br></pre></td></tr></table></figure>
+<p>尝试输入以下命令，然后重新执行刚刚的两条命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>这时候如果弹出一个对话框，输入在github/coding上面的用户名和密码即可<br>这时候我们就可以在浏览器输入<a href="https://yourname.github.io" target="_blank" rel="noopener">https://yourname.github.io</a> 或者<a href="https://youname.coding.me" target="_blank" rel="noopener">https://youname.coding.me</a> 打开</p>
+<h3 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h3><p><code>D:\hexo</code>目录下的<code>theme</code>文件夹下存放的就是博客的主题，hexo便是依据主题来生成静态文件的，挑选主题可以在官网<a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> 查找，根据自己的喜好来挑选。<br>下载主题的方式如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> your-hexo-site  <span class="comment">#eg:D:\hexo</span></span><br><span class="line">$ git <span class="built_in">clone</span> &#123;主题链接&#125; themes/&#123;主题名称&#125;</span><br></pre></td></tr></table></figure>
+<p>启用主题的方式也很简单<br>sublime打开上文提到的<code>hexo</code>目录下的<code>_config.yml</code>，<code>ctrl+f</code>输入<code>theme</code>查找这个关键字，修改其主题名称为下载的主题名称即可。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">&#123;主题名称&#125;</span></span><br></pre></td></tr></table></figure>
+<p>以本人使用的next主题为例：<br>下载最新版：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> D:hexo/</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>修改<code>hexo</code>目录下的<code>_config.yml</code></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+<p>具体可以到主题官网看看–<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">NexT</a></p>
+<h3 id="域名申请"><a href="#域名申请" class="headerlink" title="域名申请"></a>域名申请</h3><p>经过以上过程我们已经实现了一个可以即时访问的个人博客，不过我们想要的是一个更酷的更个性化的域名，下面就看一下如何申请一个免费的域名然后配置到我们的github/Coding Page上面，实现以个人域名访问自己的博客。<br>1.免费域名<br>这里推荐一个网站<a href="https://my.freenom.com" target="_blank" rel="noopener">Freenom</a>，点进去注册，注册之后按照以下步骤进入下面这个页面，然后就可以在输入框处输入你喜欢的名字查找域名了</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508131471.jpg" alt=""><br>既然是个人博客，那当然还是找自己昵称啦，例如我的昵称，查找有免费的域名后就点击加入购物车~</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508261452.jpg" alt=""></p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508321452.jpg" alt=""></p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508368555.jpg" alt=""><br>最后别忘了拖到最后点击确认购买</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508442720.jpg" alt=""><br>这里可以选择免费一年，域名快到期前的一个星期会发邮件提醒续期，续期也是不要钱的，也就是可以一直免费使用了。点击continue确认然后填写一堆信息后就能获取到了。</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508616330.jpg" alt=""></p>
+<p>回到初始界面后查看自己的域名，可以看到刚刚购买的域名已经在列表下了</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508874508.jpg" alt=""></p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517508962220.jpg" alt=""><br>2.使用第三方DNS解析工具<br>虽然freenom自身也能进行DNS解析，但是毕竟不适合国内的朋友使用。所以我们使用国内的DNSPOD、CloudXNS等第三方DNS工具。<br>这里介绍如何使用<a href="https://www.cloudxns.net/" target="_blank" rel="noopener">CloudXNS</a>管理，一如既往的先注册，这里好像需要身份证验证了，挺麻烦的，不过为了我们的域名能好好的用上，还是只能选择原谅他啊。<br>进入控制台–&gt;我的域名，点击添加域名，例如刚刚弄到手的<code>alvabill.ga</code></p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509290333.jpg" alt=""></p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509340935.jpg" alt=""><br>然后会跳出这么一个提示</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509419598.jpg" alt=""><br>意思就是要到freenom那边把域名接管过来，好的，我们先记住那一段蓝色字</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lv3ns1<span class="selector-class">.ffdns</span><span class="selector-class">.net</span></span><br><span class="line">lv3ns2<span class="selector-class">.ffdns</span><span class="selector-class">.net</span></span><br><span class="line">lv3ns3<span class="selector-class">.ffdns</span><span class="selector-class">.net</span></span><br><span class="line">lv3ns4<span class="selector-class">.ffdns</span><span class="selector-class">.net</span></span><br></pre></td></tr></table></figure>
+<p>打开freenom刚刚的那个界面，点击对应域名的manage Demain按钮进入域名管理界面</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509507009.jpg" alt=""><br>进入NS服务器管理界面</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509649013.jpg" alt=""><br>选择Use custom nameservers (enter below)，然后把刚刚记录的那四段字符串复制粘贴进去，点击change nameservers</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517509876570.jpg" alt="enter description here"></p>
+<p>完成，回到CloudXNS，等半分钟刷新一下就有了，可以现在就点击开启，或者之后配置好了点击开启。</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517510074853.jpg" alt=""></p>
+<h3 id="域名绑定Page服务"><a href="#域名绑定Page服务" class="headerlink" title="域名绑定Page服务"></a>域名绑定Page服务</h3><p>1.添加记录<br>如下为我的域名的记录，记录值分别为coding page和github page的网址，你们只需要修改这两个值，其他和我的一样配置便可。如果是只使用一个page服务就只需要两条对应的记录，然后记得要把线路类型都设置为全网默认哦。</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517510582432.jpg" alt=""></p>
+<p>2.配置Page服务<br><a href="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517510817702.jpg" target="_blank" rel="noopener">GitHub</a>：<br>进入<code>{yourname}.github.io</code>仓库–&gt;Settings，向下找到以下界面，在红框处填入你的域名</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517510817702.jpg" alt=""><br>到<code>D:\hexo\sourse</code>目录下（即你安装hexo的目录下的sourse目录下）新建文件<code>CNAME</code>，用Sublime打开填入你的域名，如<code>alvabill.ml</code>，保存。<br>然后到<code>D:\hexo</code>目录下用sublime打开<code>_config.yml</code>，<code>ctrl+f</code>查找<code>skip_render</code>，然后改为</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">skip_render:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">README.md</span>  </span><br><span class="line"><span class="bullet">  -</span> <span class="string">CNAME</span></span><br></pre></td></tr></table></figure>
+<p>这个指令就是可以跳过<code>CNAME</code>和<code>README.md</code>文件，防止每次hexo重新渲染把它们清除掉。这里的<code>README.md</code>可有可无，最好还是有，因为每个github项目都需要一个<code>readme</code>文件，添加位置和<code>CNAME</code>一样。</p>
+<p><a href="https://coding.net/" target="_blank" rel="noopener">Coding</a>：<br>进入项目–&gt;pages服务，填入域名，绑定~</p>
+<p><img src="http://p3dm71oa7.bkt.clouddn.com/%E5%B0%8F%E4%B9%A6%E5%8C%A0/1517511580763.jpg" alt=""></p>
+<p>最后重新布置项目：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean &amp;&amp; hexo g &amp;&amp; hexo d -g</span><br><span class="line">$ hexo g &amp;&amp; hexo s   <span class="comment">#如需本地预览，执行这一条</span></span><br></pre></td></tr></table></figure>
+<p>浏览器输入你的域名回车，就可以成功访问你的个人博客了！</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>摸索了一段时间才完成的，还是很有成就感的，比较遗憾的是并没有很好地记录下自己搭建这么一个网站的过程，教程写完后总感觉漏了什么，当时遇到的问题应该还是挺多的，再加上重新写博客时无法再次亲身经历那种由无到有的过程，难免会有不少疏漏的地方，欢迎大家在评论区或私戳我进行讨论，遇到什么问题也欢迎提出，我会及时地进行修正的。<br>下一篇文章将介绍如何优化以及个性化Next.mist主题。如果你也喜欢这个主题的话，可以继续关注我的更新~~</p>
+
+      
+    </div>
+
+    
+    
+      <div>
+    
+        <div style="text-align:center;color: #555;font-size:14px;">-------------The End-------------</div>
+    
+</div>
+    
+    
+    
+    
+    <div>
+          
+            
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/hexo搭建个人博客--基础篇/">hexo搭建个人博客--基础篇</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Alvabill 的个人博客">Alvabill</a></p>
+  <p><span>发布时间:</span>2018年01月30日 - 19:01</p>
+  <p><span>最后更新:</span>2018年09月07日 - 13:09</p>
+  <p><span>原始链接:</span><a href="/hexo搭建个人博客--基础篇/" title="hexo搭建个人博客--基础篇">http://alvabill.ml/hexo搭建个人博客--基础篇/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://alvabill.ml/hexo搭建个人博客--基础篇/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+    $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+	});
+    });  
+</script>
+
+          
+    </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://p3dm71oa7.bkt.clouddn.com/wcpay.png" alt="Alvabill WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://p3dm71oa7.bkt.clouddn.com/zfbpay.jpg" alt="Alvabill Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/hexo搭建个人博客-NexT主题优化/" rel="prev" title="hexo搭建个人博客--NexT主题优化">
+                hexo搭建个人博客--NexT主题优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+  
+    <div style="text-align: center;">
+      <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a7327e2ab18bb74" async = "async" ></script>
+</div>
+
+    </div>
+  
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzc1MC8xMDMwNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Alvabill" />
+            
+              <p class="site-author-name" itemprop="name">Alvabill</p>
+              <p class="site-description motion-element" itemprop="description">Alvabill个人站，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Alvabill" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.freecodecamp.cn/alvabill" target="_blank" title="fcc" rel="external nofollow"><i class="fa fa-fw fa-free-code-camp"></i>fcc</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.jianshu.com/u/439a6eee60e1" target="_blank" title="简书" rel="external nofollow"><i class="fa fa-fw fa-book"></i>简书</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.csdn.net/weixin_38796712" target="_blank" title="CSDN" rel="external nofollow"><i class="fa fa-fw fa-rotate-right"></i>CSDN</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://juejin.im/user/5a745af5f265da4e8b2fb184" target="_blank" title="掘金" rel="external nofollow"><i class="fa fa-fw fa-angle-double-down"></i>掘金</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://segmentfault.com/u/alvabill" target="_blank" title="segmentfault" rel="external nofollow"><i class="fa fa-fw fa-gripfire"></i>segmentfault</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.chuangzaoshi.com/code" title="创造狮导航" target="_blank">创造狮导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://e.xitu.io/" title="掘金酱" target="_blank">掘金酱</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="V2EX" target="_blank">V2EX</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.v2ex.com/" title="印记中文" target="_blank">印记中文</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo介绍"><span class="nav-number">2.</span> <span class="nav-text">hexo介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">3.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git安装"><span class="nav-number">3.1.</span> <span class="nav-text">Git安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NodeJS安装"><span class="nav-number">3.2.</span> <span class="nav-text">NodeJS安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo安装"><span class="nav-number">3.3.</span> <span class="nav-text">hexo安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github-Coding"><span class="nav-number">3.4.</span> <span class="nav-text">Github/Coding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH"><span class="nav-number">3.5.</span> <span class="nav-text">配置SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布"><span class="nav-number">3.6.</span> <span class="nav-text">发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改主题"><span class="nav-number">3.7.</span> <span class="nav-text">更改主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名申请"><span class="nav-number">3.8.</span> <span class="nav-text">域名申请</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名绑定Page服务"><span class="nav-number">3.9.</span> <span class="nav-text">域名绑定Page服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-snowflake-o"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alvabill</span>
+
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+  <div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.coding.me"><b>Coding Pages</b></a>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Symbols count total: </span>
+    
+    <span title="Symbols count total">74k</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Reading time total &asymp;</span>
+    
+    <span title="Reading time total">2:04</span>
+  
+  </div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+    <script type="text/javascript">
+      window.livereOptions = {
+        refer: 'hexo搭建个人博客--基础篇/'
+      };
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.4.1"></script>
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "nkmgHuL14TznEIPB93o7Hgg3-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "nkmgHuL14TznEIPB93o7Hgg3-gzGzoHsz",
+                'X-LC-Key': "fU3Xj9kGA23cwCvim1iQQIpe",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 9384,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.4.1"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.4.1"></script>
+
+
+  
+
+  
+  
+  
+    
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@latest/bookmark.min.js"></script>
+  <script type="text/javascript">
+  
+    bookmark.scrollToMark('auto', "#more");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('Copied')
+          else $(this).text('Copy failed')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"width":80,"position":"left","vOffset":-150},"mobile":{"show":false}});</script></body>
+</html>
