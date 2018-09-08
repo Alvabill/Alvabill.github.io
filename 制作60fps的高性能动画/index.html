@@ -176,18 +176,25 @@
   daovoice('update');
   </script>
 
-  <meta name="description" content="这些天使用forEach遍历一个数组时发现的一个问题——forEach循环数组时无法通过return、break的方式跳出循环，特此深入了解了一下forEach的机制。">
+  <meta name="description" content="前段时间整理的一次分享，这次写一篇文章作为一次记录。">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="forEach方法跳出循环">
-<meta property="og:url" content="http://alvabill.ml/forEach方法跳出循环/index.html">
+<meta property="og:title" content="制作60fps的高性能动画">
+<meta property="og:url" content="http://alvabill.ml/制作60fps的高性能动画/index.html">
 <meta property="og:site_name" content="Alvabill">
-<meta property="og:description" content="这些天使用forEach遍历一个数组时发现的一个问题——forEach循环数组时无法通过return、break的方式跳出循环，特此深入了解了一下forEach的机制。">
+<meta property="og:description" content="前段时间整理的一次分享，这次写一篇文章作为一次记录。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-07T05:51:53.234Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/9/3/1659ed4641d7ffbd?w=460&h=359&f=gif&s=78398">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/9/3/1659ed4641e235bc?w=277&h=134&f=jpeg&s=7750">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/9/3/1659ed4641fc5854?w=673&h=305&f=jpeg&s=51778">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/9/3/1659ed46422344a8?w=1916&h=903&f=png&s=419969">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/9/3/1659ed4641f1aa23?w=824&h=381&f=png&s=31125">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/9/3/1659ed46421e9900?w=1773&h=903&f=png&s=193128">
+<meta property="og:updated_time" content="2018-09-08T11:06:17.087Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="forEach方法跳出循环">
-<meta name="twitter:description" content="这些天使用forEach遍历一个数组时发现的一个问题——forEach循环数组时无法通过return、break的方式跳出循环，特此深入了解了一下forEach的机制。">
+<meta name="twitter:title" content="制作60fps的高性能动画">
+<meta name="twitter:description" content="前段时间整理的一次分享，这次写一篇文章作为一次记录。">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/9/3/1659ed4641d7ffbd?w=460&h=359&f=gif&s=78398">
 
 
 
@@ -196,7 +203,7 @@
 
 
 
-  <link rel="canonical" href="http://alvabill.ml/forEach方法跳出循环/"/>
+  <link rel="canonical" href="http://alvabill.ml/制作60fps的高性能动画/"/>
 
 
 
@@ -206,7 +213,7 @@
   };
 </script>
 
-  <title>forEach方法跳出循环 | Alvabill</title>
+  <title>制作60fps的高性能动画 | Alvabill</title>
   
 
 
@@ -419,7 +426,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://alvabill.ml/forEach方法跳出循环/">
+    <link itemprop="mainEntityOfPage" href="http://alvabill.ml/制作60fps的高性能动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alvabill">
@@ -436,7 +443,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">forEach方法跳出循环
+          <h2 class="post-title" itemprop="name headline">制作60fps的高性能动画
               
             
           </h2>
@@ -461,7 +468,7 @@
                 
               
 
-              <time title="Created: 2018-03-11 10:05:07" itemprop="dateCreated datePublished" datetime="2018-03-11T10:05:07+08:00">2018-03-11</time>
+              <time title="Created: 2018-09-01 10:05:07" itemprop="dateCreated datePublished" datetime="2018-09-01T10:05:07+08:00">2018-09-01</time>
             
 
             
@@ -478,7 +485,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-07 13:51:53" itemprop="dateModified" datetime="2018-09-07T13:51:53+08:00">2018-09-07</time>
+                <time title="Modified: 2018-09-08 19:06:17" itemprop="dateModified" datetime="2018-09-08T19:06:17+08:00">2018-09-08</time>
               
             
           </span>
@@ -509,7 +516,7 @@
 
           
           
-             <span id="/forEach方法跳出循环/" class="leancloud_visitors" data-flag-title="forEach方法跳出循环">
+             <span id="/制作60fps的高性能动画/" class="leancloud_visitors" data-flag-title="制作60fps的高性能动画">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -535,7 +542,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.3k</span>
+                <span title="Symbols count in article">6.1k</span>
               
 
               
@@ -549,13 +556,13 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2 mins.</span>
+                <span title="Reading time">10 mins.</span>
               
             </div>
           
 
           
-              <div class="post-description">这些天使用forEach遍历一个数组时发现的一个问题——forEach循环数组时无法通过return、break的方式跳出循环，特此深入了解了一下forEach的机制。</div>
+              <div class="post-description">前段时间整理的一次分享，这次写一篇文章作为一次记录。</div>
           
 
         </div>
@@ -571,16 +578,111 @@
       
 
       
-        <h2 id="前文"><a href="#前文" class="headerlink" title="前文"></a>前文</h2><p>没怎么理解JavaScript的<code>forEach</code>方法的童鞋使用<code>forEach</code>时很容易遇到一个问题就是，当你想要跳出这个循环时，发现<code>return</code>、<code>break</code>是不起作用的。下面我们来分析一下原因以及解决方法。</p>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先我们要知道的是<code>forEach</code>方法的机制是对数组的每个有效元素执行一次<code>callback</code>函数，然后<code>return</code>、<code>break</code>等只作用于一个函数，也就造成了无法跳出<code>forEach</code>循环的问题，而是只能跳过当前函数的执行。</p>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><h4 id="曲线救国（SegmentFault）"><a href="#曲线救国（SegmentFault）" class="headerlink" title="曲线救国（SegmentFault）"></a>曲线救国（<a href="https://segmentfault.com/q/1010000003866554" target="_blank" rel="noopener">SegmentFault</a>）</h4><p>通过使用抛出异常的方式可以中止。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">arr ,item</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">var</span> BreakException= &#123;&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(i === item) <span class="keyword">throw</span> BreakException;</span><br><span class="line">			<span class="built_in">console</span>.log(i);</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">		<span class="keyword">if</span> (e!==BreakException) <span class="keyword">throw</span> e;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="Array-some-amp-Array-every"><a href="#Array-some-amp-Array-every" class="headerlink" title="Array.some&amp;Array.every"></a>Array.some&amp;Array.every</h4><p>正常的使用环境：如果是测试一个数组里的元素是否符合某条件，且需要返回一个布尔值则应该使用这两个方法。这里可用于跳出循环。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">arr ,item</span>)</span>&#123;</span><br><span class="line">		arr.some(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(i === item) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			<span class="built_in">console</span>.log(i);</span><br><span class="line">		&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">arr ,item</span>)</span>&#123;</span><br><span class="line">		arr.every(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">if</span>(i === item) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">			<span class="built_in">console</span>.log(i);</span><br><span class="line">		&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="循规蹈矩"><a href="#循规蹈矩" class="headerlink" title="循规蹈矩"></a>循规蹈矩</h4><p>如果你需要这样，使用forEach()方法是错误的，你可以用一个简单的循环作为替代。—— <em>MDN</em><br>对于多重for循环，我们跳出循环需要特殊处理一下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xh:	<span class="comment">//首先将循环命名</span></span><br><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">5</span>;j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i==<span class="number">3</span> &amp;&amp; j==<span class="number">4</span>)&#123;</span><br><span class="line">            <span class="keyword">break</span> xh;	<span class="comment">//跳出循环xh</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a href="https://segmentfault.com/q/1010000003866554" target="_blank" rel="noopener">https://segmentfault.com/q/1010000003866554</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach</a></li>
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>说到web的高性能动画，这部分内容其实已经是老生常谈的了，不过其中还是有不少比较新的而且非常实用的内容可以和大家分享一下。<br>读完这篇文章后相信大家都会对动画渲染的机制以及制作60fps动画的关键要素有足够的理解，以后遇上了动画相关的问题也可以很好的从源头上解决。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="什么是高性能动画呢？"><a href="#什么是高性能动画呢？" class="headerlink" title="什么是高性能动画呢？"></a>什么是高性能动画呢？</h3><p>动画帧率可以作为衡量标准，一般来说画面在 60fps 的帧率下效果比较好。<br><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659ed4641d7ffbd?w=460&amp;h=359&amp;f=gif&amp;s=78398" alt="fps对比：对我们的眼睛来说30fps感觉流畅，60fps更舒服完美" title="60fps"></p>
+<p>换算一下就是，每一帧要在 16.7ms (16.7 = 1000/60) 内完成渲染。因此，我们的首要任务是减少不必要的性能消耗。<br>越多的帧需要渲染的，意味着有越多的任务需要浏览器处理，所以掉帧就出现了，这是达到 60fps 的一个绊脚石。</p>
+<p>如果所有动画都无法在 16.7ms 渲染完毕，不如考虑用略低的 30fps 帧率来渲染。</p>
+<h3 id="如何实现丝般顺滑"><a href="#如何实现丝般顺滑" class="headerlink" title="如何实现丝般顺滑"></a>如何实现丝般顺滑</h3><p>这里主要决定因素有二：</p>
+<p>时机(Frame Timing)： 新的一帧准备好的时机</p>
+<p>成本(Frame Budget)： 渲染新的一帧需要多长的时间</p>
+<h3 id="开始绘制的时机"><a href="#开始绘制的时机" class="headerlink" title="开始绘制的时机"></a>开始绘制的时机</h3><p>一般来说我们使用<code>setTimeout(callback, 1/60)</code>来实现16.7ms后执行动画一帧的渲染。<br>然而<code>setTimeout</code>实际上并不准确。<br>首先，<code>setTimeout</code>依靠浏览器内置时钟的更新频率<br>例如：IE8及以前更新间隔为15.6ms，<code>setTimeout(callback, 1/60)</code>为16.7ms，那么它就需要两个15.6ms才会触发，这也意味着无故延迟了 15.6 x 2 - 16.7 = 14.5毫秒。<br><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659ed4641e235bc?w=277&amp;h=134&amp;f=jpeg&amp;s=7750" alt="时钟频率" title="t01457cd049f86cc7ef"></p>
+<p>其次，假使能够达到16.7ms，它还要面临一个异步队列的问题。<br>因为异步的关系<code>setTimeout</code>中的回调函数并非立即执行，而是需要加入等待队列中。但问题是，如果在等待延迟触发的过程中，有新的同步脚本需要执行，那么同步脚本不会排在timer的回调之后，而是立即执行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">runForSeconds</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> start = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    <span class="keyword">while</span> (start + s * <span class="number">1000</span> &gt; (+<span class="keyword">new</span> <span class="built_in">Date</span>())) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    runForSeconds(<span class="number">10</span>);</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Done!"</span>);</span><br><span class="line">&#125;, <span class="number">1000</span> * <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<p>以上的例子是，如果在等待触发延迟的3秒过程中，有人点击了body，那么回调还是准时在3s完成时触发吗？<br>实践执行的时候，它会等待10s，同步函数总是优先于异步函数。</p>
+<p>基于这些问题我们提出了另一个解决方案：requestAnimationFrame(callback)</p>
+<blockquote>
+<p>window.requestAnimationFrame() 方法告诉浏览器您希望执行动画并请求浏览器在下一次重绘之前调用指定的函数来更新动画。该方法使用一个回调函数作为参数，这个回调函数会在浏览器重绘之前调用。<em>– MDN</em></p>
+</blockquote>
+<p>当我们调用这个函数的时候，我们告诉它需要做两件事： </p>
+<ol>
+<li>我们需要新的一帧；</li>
+<li>当你渲染新的一帧时需要执行我传给你的回调函数</li>
 </ol>
+<p>与 setTimeout 相比，rAF(requestAnimationFrame) 最大的优势是<strong>由系统来决定回调函数的执行时机</strong>。</p>
+<p>具体一点讲就是，系统每次绘制之前会主动调用 rAF 中的回调函数，如果系统绘制率是 60Hz，那么回调函数就每16.7ms 被执行一次，如果绘制频率是75Hz，那么这个间隔时间就变成了 1000/75=13.3ms。</p>
+<p>换句话说就是，rAF 的执行步伐跟着系统的绘制频率走。它能保证回调函数在屏幕每一次的绘制间隔中只被执行一次(<strong>函数节流</strong>，这篇文章就不细说了，感兴趣的可以查一下)，这样就不会引起丢帧现象，也不会导致动画出现卡顿的问题。</p>
+<p>另外它可以自动调节频率。如果callback工作太多无法在一帧内完成会自动降低为30fps。虽然降低了，但总比掉帧好。</p>
+<p>同时对比使用 setTimeout 实现的动画，当页面被隐藏或最小化时，setTimeout 仍然在后台执行动画任务，由于此时页面处于不可见或不可用状态，刷新动画是没有意义的，而且还浪费 CPU 资源。而 rAF 则完全不同，当页面处理未激活的状态下，该页面的屏幕绘制任务也会被系统暂停，因此跟着系统步伐走的 rAF 也会停止渲染，当页面被激活时，动画就从上次停留的地方继续执行，有效节省了 CPU 开销。</p>
+<hr>
+<p>对于rAF的兼容性问题其实已经有了很好的处理方案了，以下是一种比较简单的：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.requestAnimFrame = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> <span class="keyword">return</span>  <span class="built_in">window</span>.requestAnimationFrame   || </span><br><span class="line">   <span class="built_in">window</span>.webkitRequestAnimationFrame || </span><br><span class="line">   <span class="built_in">window</span>.mozRequestAnimationFrame    || </span><br><span class="line">   <span class="built_in">window</span>.oRequestAnimationFrame      || </span><br><span class="line">   <span class="built_in">window</span>.msRequestAnimationFrame     || </span><br><span class="line">   <span class="function"><span class="keyword">function</span>(<span class="params"> callback </span>)</span>&#123;</span><br><span class="line">        <span class="built_in">window</span>.setTimeout(callback, <span class="number">1000</span> / <span class="number">60</span>);</span><br><span class="line">   &#125;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>这种写法没有考虑 cancelAnimationFrame 的兼容性，并且不是所有的设备绘制时间间隔都是1000/60。</p>
+<p>这个是比较不错的<a href="https://github.com/darius/requestAnimationFrame" target="_blank" rel="noopener">polyfil</a>    。</p>
+<h3 id="绘制一帧的时间"><a href="#绘制一帧的时间" class="headerlink" title="绘制一帧的时间"></a>绘制一帧的时间</h3><p>总的来说，rAF解决了前面的第一个问题（绘制时机），至于第二个问题（绘制成本），rAF是无能为力的，最多也就是采取自动降低频率的方式处理。</p>
+<p>这里就需要从浏览器渲染方面来优化了，首先看下这个图：<br><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659ed4641fc5854?w=673&amp;h=305&amp;f=jpeg&amp;s=51778" alt="渲染过程" title="t01018eff532098fece"></p>
+<h4 id="Rendering"><a href="#Rendering" class="headerlink" title="Rendering"></a>Rendering</h4><blockquote>
+<p>页面首次加载时，浏览器会下载并解析 HTML，将 HTML 元素转变为一个 DOM 节点的「内容树」(content tree)。除此之外，样式同样会被解析生成「渲染树」 (render tree)。为了提升性能，渲染引擎会分开完成这些工作，甚至会出现渲染树比 DOM 树更快生成出来。</p>
+</blockquote>
+<p>在这个阶段里最影响绘制时间的自然就是Layout了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// animation loop</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">update</span>(<span class="params">timestamp</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> m = <span class="number">0</span>; m &lt; movers.length; m++) &#123;</span><br><span class="line">        <span class="comment">// DEMO 版本</span></span><br><span class="line">        <span class="comment">//movers[m].style.left = ((Math.sin(movers[m].offsetTop + timestamp/1000)+1) * 500) + 'px';</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// FIXED 版本</span></span><br><span class="line">        movers[m].style.left = ((<span class="built_in">Math</span>.sin(m + timestamp/<span class="number">1000</span>)+<span class="number">1</span>) * <span class="number">500</span>) + <span class="string">'px'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    rAF(update);</span><br><span class="line">&#125;;</span><br><span class="line">rAF(update);</span><br></pre></td></tr></table></figure>
+<p>上面例子里DEMO版本是非常慢的，之所以慢的原因是，在修改每一个物体的left值时，会请求这个物体的offsetTop值，触发了重排，这是一个非常耗时的reflow操作。</p>
+<p>通常我们会不知不觉中写了很多的频繁layout的代码，例如：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> h1 = element1.clientHeight;</span><br><span class="line">element1.style.height = (h1 * <span class="number">2</span>) + <span class="string">'px'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> h2 = element2.clientHeight; </span><br><span class="line">element2.style.height = (h2 * <span class="number">2</span>) + <span class="string">'px'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> h3 = element3.clientHeight;</span><br><span class="line">element3.style.height = (h3 * <span class="number">2</span>) + <span class="string">'px'</span>;</span><br></pre></td></tr></table></figure>
+<p>不断地读写 DOM 会导致「强制同步布局」(forced synchronous layouts)，不过在技术发展过程中它演变成了更形象的词 — 「布局抖动」(layout thrashing)（详情可以看一下这篇文章 <a href="http://kellegous.com/j/2013/01/26/layout-performance/" target="_blank" rel="noopener">layout thrashing</a>）。<br>浏览器会追踪「脏元素」，在合适的时候将变换过程储存起来，然后在读取了特定属性以后，开发者可以强制浏览器提前计算，这样反复的读写会导致重排。<br>所以这里我们需要进行优化，<strong>先读后写</strong>就是一个解决方案，上面的代码可以改写为：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Read</span></span><br><span class="line"><span class="keyword">var</span> h1 = element1.clientHeight;</span><br><span class="line"><span class="keyword">var</span> h2 = element2.clientHeight;</span><br><span class="line"><span class="keyword">var</span> h3 = element3.clientHeight;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Write</span></span><br><span class="line">element1.style.height = (h1 * <span class="number">2</span>) + <span class="string">'px'</span>;</span><br><span class="line">element2.style.height = (h2 * <span class="number">2</span>) + <span class="string">'px'</span>;</span><br><span class="line">element3.style.height = (h3 * <span class="number">2</span>) + <span class="string">'px'</span>;</span><br></pre></td></tr></table></figure>
+<p>当然这种只能应对一些普通的情况，如果代码是解耦的或者更复杂的读写后嵌套读写操作的这些情况可以使用一些比较成熟的解决方案，例如fastdom.js。另外一个小技巧是使用rAF来延迟全部的写操作到下一帧执行也是很不错的解决方案。</p>
+<h4 id="Paint"><a href="#Paint" class="headerlink" title="Paint"></a>Paint</h4><blockquote>
+<p>生成布局后，浏览器将页面绘制到屏幕上。这个环节和前一个步骤类似，浏览器会追踪脏元素，将它们合并到一个超大的矩形区域中。每一帧内只会发生一次重绘，用于绘制这个被污染区域。</p>
+</blockquote>
+<p>这个阶段对性能的影响主要在于重绘。</p>
+<p><strong>减少不必的绘制</strong></p>
+<p>例如，gif图即使不可见，也可能导致paint，不需要时应将gif图的display属性设为none<br>在经常paint的区域，要避免代价太高的style<br>代价比较高的样式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">color</span>,<span class="selector-tag">border-style</span>,<span class="selector-tag">visibility</span>,<span class="selector-tag">background</span>,</span><br><span class="line"><span class="selector-tag">text-decoration</span>,<span class="selector-tag">background-image</span>,</span><br><span class="line"><span class="selector-tag">background-position</span>,<span class="selector-tag">background-repeat</span></span><br><span class="line"><span class="selector-tag">outline-color</span>,<span class="selector-tag">outline</span>,<span class="selector-tag">outline-style</span></span><br><span class="line"><span class="selector-tag">border-radius</span>,<span class="selector-tag">outline-width</span>,<span class="selector-tag">box-shadow</span></span><br><span class="line"><span class="selector-tag">background-size</span></span><br></pre></td></tr></table></figure>
+<p>参考网站：<a href="https://csstriggers.com/" target="_blank" rel="noopener">https://csstriggers.com/</a></p>
+<p><strong>减少绘制的区域</strong></p>
+<p>为引起大范围Paint的元素生成独立的Layer以减小Paint的范围</p>
+<p>可以参考一下这个<a href="https://www.html5rocks.com/static/demos/scrolling/demo.html#" target="_blank" rel="noopener">demo网站</a>，绿色部分为重绘区域：<br><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659ed46422344a8?w=1916&amp;h=903&amp;f=png&amp;s=419969" alt="demo网站截图"></p>
+<h4 id="Composite"><a href="#Composite" class="headerlink" title="Composite"></a>Composite</h4><p>将所有绘制好的元素进行复合。<br>默认情况下，所有元素将会被绘制到同一个层中，如果将元素分开到不同的复合层中，更新元素对性能友好，不在同一层的元素不容易受到影响。</p>
+<p>这一阶段里CPU 绘制层，GPU 生成层。GPU 复合层上的改变代价最小性能消耗最少。所以这里的优化主要就是把代价高的改动都放到GPU上，也就是一般说的开启硬件加速技术，可以说有益无害，如果设备的性能足够开启就对了。</p>
+<p>这里的限制主要有：GPC和CPU之间带宽，GPU的限度。</p>
+<hr>
+<p>这里需要区分一下CPU，GPU的工作：<br><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659ed4641f1aa23?w=824&amp;h=381&amp;f=png&amp;s=31125" alt="enter description here" title="t01918abbc87b4f13ba"><br>CPU工作比较多，还分主线程和合成线程。<br>主线程主要负责：</p>
+<ol>
+<li>Javascript 的计算与执行</li>
+<li>CSS 样式计算</li>
+<li>Layout 计算</li>
+<li>将页面元素绘制成位图（paint），也就是光栅化（Raster）</li>
+<li>将位图给合成线程</li>
+</ol>
+<p>合成线程则主要负责：</p>
+<ol>
+<li>将位图(GraphicsLayer 层)以<strong>纹理(texture)</strong> 的形式上传给 GPU（GPC和CPU之间带宽）</li>
+<li>计算页面的可见部分和即将可见部分（滚动）</li>
+<li>CSS 动画处理（CSS 动画而言，由于其流程不受主线程的影响，所以性能更好。）</li>
+<li>通知 GPU 绘制位图到屏幕上</li>
+</ol>
+<p>而GPU就只需要绘制图层了，所以硬件加速的性能无疑更好。</p>
+<hr>
+<p>开启硬件加速的方式主要有：</p>
+<ol>
+<li>通过改变 <code>opacity</code> 和 <code>transform</code> 的值触发</li>
+<li>通过<code>transform</code>的3D属性强制开启GPU加速</li>
+<li><code>will-change</code>显式地通知浏览器对某一个元素的某个或某些元素做渲染优化</li>
+</ol>
+<p>硬件加速之后，浏览器会为此元素单独创建一个“层”。当有单独的层之后，此元素的repaint操作将只需要更新自己，不用影响到别人。你可以将其理解为局部更新。所以开启了硬件加速的动画会变得流畅很多</p>
+<p>默认情况下，<code>transform</code>、<code>opacity</code>这类css属性CPU是直接通知GPU来做处理的，因为GPU能快速对texture（纹理：CPU传输到GPU的一个Bitmap）进行偏移、缩放、旋转、修改透明度等操作，不经过主线程的layout、paint过程。也就是开启了硬件加速。</p>
+<p> <code>will-change</code>是个新事物，它能够显式地通知浏览器对某一个元素的某个或某些元素做渲染优化。 <code>will-change</code> 接收各种各样的属性值，比如一个或多个 CSS 属性 (<code>transform</code>, <code>opacity</code>)、<code>contents</code> 或者 <code>scroll-position</code>。不过最常用值可能就是 <code>auto</code>，这个值表示的是浏览器将进行默认的优化：</p>
+<hr>
+<p>GPU虽然擅长处理图像，但是它也有瓶颈。</p>
+<p>连接CPU和GPU之间的带宽是有限的，如果一次更新的层太多，则很容易就达到GPU的瓶颈，影响到动画的流畅度。所以我们需要控制层的数量和层paint的次数。</p>
+<p>控制层的数量可以理解，因为层的创建和更新都会消耗内存。而控制层paint的次数，是为了减少位图更新的次数。每次位图更新，合成线程就需要提交新的位图给GPU。频繁地更新位图也会拖慢GPU的效率。</p>
+<p>优化有度，我们总能听到关于「复合层过多反而阻碍渲染」的讨论。因为浏览器已经为优化做了能做的一切， will-change 的性能优化方案本身对资源要求很高。如果浏览器持续在执行某个元素的 will-change，就意味着浏览器要持续对这个元素的进行优化，性能消耗造成页面卡顿。</p>
+<p>过多的复合层降低页面性能的现象在移动端很常见。</p>
+<hr>
+<p><strong>避免意外生成的layer</strong></p>
+<p>z-index高于Layer的元素，也会生成单独的Layer</p>
+<p><a href="http://output.jsbin.com/efirip/5/quiet" target="_blank" rel="noopener">demo以及说明页面</a><br><img src="https://user-gold-cdn.xitu.io/2018/9/3/1659ed46421e9900?w=1773&amp;h=903&amp;f=png&amp;s=193128" alt=""></p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>实现丝般顺滑主要决定因素有二：</p>
+<p>时机(Frame Timing)： </p>
+<ul>
+<li>rAF</li>
+</ul>
+<p>成本(Frame Budget)： </p>
+<ul>
+<li>避免layout：先读后写</li>
+<li>尽量少paint：注意样式的使用</li>
+<li>适当的硬件加速</li>
+</ul>
 
       
     </div>
@@ -605,12 +707,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/forEach方法跳出循环/">forEach方法跳出循环</a></p>
+  <p><span>本文标题:</span><a href="/制作60fps的高性能动画/">制作60fps的高性能动画</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 Alvabill 的个人博客">Alvabill</a></p>
-  <p><span>发布时间:</span>2018年03月11日 - 10:03</p>
-  <p><span>最后更新:</span>2018年09月07日 - 13:09</p>
-  <p><span>原始链接:</span><a href="/forEach方法跳出循环/" title="forEach方法跳出循环">http://alvabill.ml/forEach方法跳出循环/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://alvabill.ml/forEach方法跳出循环/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年09月01日 - 10:09</p>
+  <p><span>最后更新:</span>2018年09月08日 - 19:09</p>
+  <p><span>原始链接:</span><a href="/制作60fps的高性能动画/" title="制作60fps的高性能动画">http://alvabill.ml/制作60fps的高性能动画/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://alvabill.ml/制作60fps的高性能动画/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -694,8 +796,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo搭建个人博客-SEO和站点加速/" rel="next" title="hexo搭建个人博客--SEO和站点加速">
-                <i class="fa fa-chevron-left"></i> hexo搭建个人博客--SEO和站点加速
+              <a href="/常用正则匹配汇总/" rel="next" title="常用正则匹配汇总">
+                <i class="fa fa-chevron-left"></i> 常用正则匹配汇总
               </a>
             
           </div>
@@ -703,10 +805,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/最全Javascript数据类型解析/" rel="prev" title="最全Javascript数据类型解析">
-                最全Javascript数据类型解析 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -961,7 +1059,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前文"><span class="nav-number">1.</span> <span class="nav-text">前文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-number">2.1.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#曲线救国（SegmentFault）"><span class="nav-number">2.1.1.</span> <span class="nav-text">曲线救国（SegmentFault）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Array-some-amp-Array-every"><span class="nav-number">2.1.2.</span> <span class="nav-text">Array.some&amp;Array.every</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循规蹈矩"><span class="nav-number">2.1.3.</span> <span class="nav-text">循规蹈矩</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是高性能动画呢？"><span class="nav-number">2.1.</span> <span class="nav-text">什么是高性能动画呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何实现丝般顺滑"><span class="nav-number">2.2.</span> <span class="nav-text">如何实现丝般顺滑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始绘制的时机"><span class="nav-number">2.3.</span> <span class="nav-text">开始绘制的时机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制一帧的时间"><span class="nav-number">2.4.</span> <span class="nav-text">绘制一帧的时间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Rendering"><span class="nav-number">2.4.1.</span> <span class="nav-text">Rendering</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Paint"><span class="nav-number">2.4.2.</span> <span class="nav-text">Paint</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Composite"><span class="nav-number">2.4.3.</span> <span class="nav-text">Composite</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">2.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1160,7 +1258,7 @@
   
     <script type="text/javascript">
       window.livereOptions = {
-        refer: 'forEach方法跳出循环/'
+        refer: '制作60fps的高性能动画/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
